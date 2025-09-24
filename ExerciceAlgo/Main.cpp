@@ -6,6 +6,8 @@
 
 #include "Shared.h"
 #include "Algo.h"
+#include "AlgoGodSort.h"
+#include "AlgoNaive.h"
 
 std::vector<sTeam> g_vTeamNames =
 {
@@ -43,7 +45,8 @@ int main()
 
 	std::vector<Algo*> algos;
 	{
-		// Add an implementation of Algo class here, using new
+		algos.push_back(new AlgoNaive());
+		algos.push_back(new AlgoGodSort());
 	}
 
 	const unsigned retry = 25;

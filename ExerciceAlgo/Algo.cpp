@@ -1,6 +1,7 @@
 #include "Algo.h"
 
 #include <chrono>
+#include <iomanip>
 #include <iostream>
 
 Algo::Algo(const std::string& name) : Name(name)
@@ -37,6 +38,9 @@ void Algo::PrintResult() const
 	std::cout << Name << std::endl;
 	for (const sTimeCompare& t : ExecutionTimes)
 	{
-		std::cout << "Nb Element : " << t.NbElement << "\tAvg Time(ms) " << t.TimeAvg << std::endl;
+		std::cout << "Nb Element : " << t.NbElement
+				  << "\tAvg Time(ms) " << std::fixed << std::setprecision(6) << t.TimeAvg
+				  << std::endl;
 	}
 }
+

@@ -1,26 +1,30 @@
 #pragma once
 
-// This is a forward declaration :)
-// This is VERY useful and you must learn about it and use it as much as possible
+// Forward declaration (pour éviter d'inclure TextureMgr.h ici)
 class TextureMgr;
 class GameMgr;
 
 class Globals final
 {
 public:
-
 	/*
-	* Constructor & Destructor are here for a reason
+	* Constructor & Destructor
 	*/
 	Globals();
 	~Globals();
 
 	/*
 	* Init & Destroy of the class
-	* They must be implemented in the right way to (de)initialize members
+	* Ils gèrent correctement l'initialisation et la libération
 	*/
 	void Init();
 	void Destroy();
+
+	/*
+	* Getter pour accéder au TextureMgr
+	*/
+	TextureMgr* GetTextureMgr() const { return m_textureMgr; }
+
 private:
 	TextureMgr* TextureMgr;
 	GameMgr* GameMgr;
